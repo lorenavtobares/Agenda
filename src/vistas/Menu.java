@@ -14,6 +14,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         super("Agenda");
         initComponents();
+        
     }
     
     private void showPopMenu (MouseEvent e){

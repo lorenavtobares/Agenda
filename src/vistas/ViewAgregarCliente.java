@@ -210,24 +210,41 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         // TODO add your handling code here:
         try{
-            int dni = Integer.parseInt(tf_dni.getText());
+            String dni = tf_dni.getText();
+            int dni_parceado = 0;
             String apellido = tf_apellido.getText();
             String nombre = tf_nombre.getText();
             String ciudad = tf_ciudad.getText();
             String telefono = tf_telefono.getText();
             String direccion = tf_direccion.getText();
+            
+            if ( !dni.isEmpty() ){
+                dni_parceado = Integer.parseInt(dni);
+                
+                if ( !apellido.isEmpty() ){    
+                if ( !nombre.isEmpty() ){
+                if ( !ciudad.isEmpty() ){
+                if ( !ciudad.isEmpty() ){         
+                if ( !telefono.isEmpty() ){
+                if ( !direccion.isEmpty() ){
+                                    
+                    Cliente miCliente = new Cliente( dni_parceado, nombre, apellido, ciudad, direccion );
+                    boolean resultado = Menu.miDirectorio.agregarCliente(telefono, miCliente);
         
-            Cliente miCliente = new Cliente(dni, nombre, apellido, ciudad, direccion);
-        
-            boolean resultado = Menu.miDirectorio.agregarCliente(telefono, miCliente);
-        
-            if ( resultado ) {
-                JOptionPane.showMessageDialog(this,"Cliente registrado");
-            } else {
-                JOptionPane.showMessageDialog(this,"Telefono duplicado");  
-            }
-        
-            limpiar();
+                    if ( resultado ) {
+                        JOptionPane.showMessageDialog(this,"Cliente registrado");
+                    } else {
+                        JOptionPane.showMessageDialog(this,"Telefono duplicado");  
+                    }
+                    limpiar();
+                                    
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar una direccion."); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un telefono."); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un telefono."); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar una ciudad."); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Nombre"); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Apellido"); }
+                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un DNI"); }
         
         }catch(Exception atrapa){
         

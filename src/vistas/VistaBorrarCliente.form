@@ -90,9 +90,11 @@
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
               <Component id="btn_borrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+              <Component id="btn_nuevo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               <Component id="btn_cerrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -162,6 +164,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btn_cerrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_borrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_nuevo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
           </Group>
@@ -251,6 +254,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Borrar Cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_borrarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="label_direccion">
       <Properties>
@@ -289,6 +295,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Datos del cliente"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_nuevo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nuevo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nuevoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

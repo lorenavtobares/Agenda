@@ -3,6 +3,7 @@
 */
 package vistas;
 
+import javax.swing.JOptionPane;
 import negocio.Cliente;
 
 public class VistaBorrarCliente extends javax.swing.JInternalFrame {
@@ -37,6 +38,7 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
         label_icono = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         label_subtitulo2 = new javax.swing.JLabel();
+        btn_nuevo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(176, 218, 255));
 
@@ -74,6 +76,11 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
         label_subtitulo1.setText("Buscar cliente por telefono");
 
         btn_borrar.setText("Borrar Cliente");
+        btn_borrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrarActionPerformed(evt);
+            }
+        });
 
         label_direccion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label_direccion.setText("Direccion:");
@@ -95,6 +102,13 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
 
         label_subtitulo2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label_subtitulo2.setText("Datos del cliente");
+
+        btn_nuevo.setText("Nuevo");
+        btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,9 +164,11 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
                                         .addGap(46, 46, 46)))))))
                 .addGap(12, 12, 12))
             .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
+                .addGap(191, 191, 191)
                 .addComponent(btn_borrar)
-                .addGap(134, 134, 134)
+                .addGap(91, 91, 91)
+                .addComponent(btn_nuevo)
+                .addGap(97, 97, 97)
                 .addComponent(btn_cerrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -207,7 +223,8 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cerrar)
-                    .addComponent(btn_borrar))
+                    .addComponent(btn_borrar)
+                    .addComponent(btn_nuevo))
                 .addGap(148, 148, 148))
         );
 
@@ -215,12 +232,10 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tf_busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_busquedaActionPerformed
-        // TODO add your handling code here:
-        Cliente cell=Menu.miDirectorio.buscarCliente(title);
+        Cliente cell = Menu.miDirectorio.buscarCliente(title);
     }//GEN-LAST:event_tf_busquedaActionPerformed
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btn_cerrarActionPerformed
 
@@ -229,14 +244,53 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tf_direccionActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        // TODO add your handling code here:
+        String telefono = tf_busqueda.getText(); //recibe el telefono
+        Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(telefono));
+        
+        if (buscandoCliente != null) {
+            tf_dni.setText(buscandoCliente.getDni() + " ");
+            tf_apellido.setText(buscandoCliente.getApellido() + " ");
+            tf_nombre.setText(buscandoCliente.getNombre() + " ");
+            tf_ciudad.setText(buscandoCliente.getCiudad() + " ");
+            tf_direccion.setText(buscandoCliente.getDireccion() + " ");   
+             
+        } else {
+            JOptionPane.showMessageDialog(this, "Telefono no encontrado");
+        }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
+    private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
+        String telefono = tf_busqueda.getText();
+        Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(telefono));
+        
+        if( buscandoCliente != null ){
+            Menu.miDirectorio.borrarCliente(telefono);
+            JOptionPane.showMessageDialog(this, "Registro eliminado correctamente.");
+            limpiar();
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe realizar una busqueda.");
+        }
+        
+    }//GEN-LAST:event_btn_borrarActionPerformed
+
+    private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btn_nuevoActionPerformed
+
+    public void limpiar(){
+        tf_dni.setText("");
+        tf_apellido.setText("");
+        tf_nombre.setText("");
+        tf_ciudad.setText("");
+        tf_busqueda.setText("");
+        tf_direccion.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_borrar;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_cerrar;
+    private javax.swing.JButton btn_nuevo;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

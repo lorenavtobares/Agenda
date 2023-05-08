@@ -10,7 +10,7 @@ import java.util.Set;
 // buscarTeléfono() que en base a un apellido nos devuelve una lista con los nros de 
 //teléfono asociados a dicho apellido.
 public class Directorio {
-    private HashMap<String,Cliente> registro = new HashMap <String,Cliente>();
+    private HashMap <String,Cliente> registro = new HashMap <String,Cliente>();
     
     public Cliente buscarCliente ( String numTelefono ){
         for ( Map.Entry<String, Cliente> entry : registro.entrySet() ) {
@@ -20,21 +20,21 @@ public class Directorio {
                 return value;
             }
         }
-        System.out.println("No se encontrò el telefono asociado a un cliente");
+        System.out.println("No se encontro el telefono asociado a un cliente.");
         return null;
     }
     
-public ArrayList<Cliente> buscarClientes(String ciudad){
+    public ArrayList<Cliente> buscarClientes( String ciudad ){
         
-        ArrayList<Cliente>buscar= new ArrayList();
-        Set<String> claves=registro.keySet();
+        ArrayList<Cliente> buscar = new ArrayList();
+        Set<String> claves = registro.keySet();
         Iterator<String> it = claves.iterator();
         
         while(it.hasNext()){
-            String claveActual=it.next();
-            Cliente clienteActual=registro.get(claveActual);
+            String claveActual = it.next();
+            Cliente clienteActual = registro.get(claveActual);
            
-            if(clienteActual.getCiudad().equals(ciudad)){
+            if( clienteActual.getCiudad().equals(ciudad) ) {
                 buscar.add(clienteActual);
             }         
         }
@@ -47,11 +47,11 @@ AgregarCliente() que permite registrar un nuevo cliente con su respectivo nro de
 teléfono. Siendo el nro del teléfono la clave del mismo.
 */
 
-    public boolean agregarCliente(String telefono, Cliente cliente) {
+    public boolean agregarCliente( String telefono, Cliente cliente ){
         boolean agregado = false;
 
-        if (!registro.containsKey(telefono)) {
-            registro.put(telefono, cliente);
+        if ( !registro.containsKey(telefono) ){
+            registro.put( telefono, cliente );
             agregado = true;
         }
         return agregado;
@@ -60,7 +60,8 @@ teléfono. Siendo el nro del teléfono la clave del mismo.
     public ArrayList<String> buscarTelefono( String apellido ){
         ArrayList <String> num = new ArrayList<String>();
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
-            if(registro.containsValue(apellido)){
+            if(registro.containsValue(apellido))
+            {
                 num.add(entry.getKey());
             }
         }
@@ -73,11 +74,16 @@ teléfono. Siendo el nro del teléfono la clave del mismo.
     }
     
     public void borrarCliente(String telefono){
-        Cliente aux = registro.remove(telefono);
-        if (aux!=null) {
+        Cliente aux = registro.remove( telefono );
+        
+        if ( aux != null) 
+        {
             System.out.println("Se ha eliminado correctamente.");
-        } else {
+        }
+        else 
+        {
             System.out.println("Cliente no encontrado.");
         }
     }
+
 }

@@ -84,8 +84,8 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(label_apellido)
-                                .addGap(41, 41, 41)
-                                .addComponent(jcb_buscarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
+                                .addComponent(jcb_buscarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn_buscar))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -121,10 +121,9 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_apellido)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_buscar)
-                        .addComponent(jcb_buscarApellido)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                    .addComponent(btn_buscar)
+                    .addComponent(jcb_buscarApellido, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_cerrar)
@@ -141,7 +140,14 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         String apellido = jcb_buscarApellido.getText(); //recibe el apellido
-        Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(apellido));
+        
+        if ( !apellido.isEmpty() ){
+            Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(apellido));
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe ingresar un apellido para realizar la busqueda.");
+        }
+        
+        
         
         
     }//GEN-LAST:event_btn_buscarActionPerformed

@@ -245,17 +245,22 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         String telefono = tf_busqueda.getText(); //recibe el telefono
-        Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(telefono));
         
-        if (buscandoCliente != null) {
-            tf_dni.setText(buscandoCliente.getDni() + " ");
-            tf_apellido.setText(buscandoCliente.getApellido() + " ");
-            tf_nombre.setText(buscandoCliente.getNombre() + " ");
-            tf_ciudad.setText(buscandoCliente.getCiudad() + " ");
-            tf_direccion.setText(buscandoCliente.getDireccion() + " ");   
+        if ( !telefono.isEmpty() ){
+            Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(telefono));
+            
+            if (buscandoCliente != null) {
+                tf_dni.setText(buscandoCliente.getDni() + " ");
+                tf_apellido.setText(buscandoCliente.getApellido() + " ");
+                tf_nombre.setText(buscandoCliente.getNombre() + " ");
+                tf_ciudad.setText(buscandoCliente.getCiudad() + " ");
+                tf_direccion.setText(buscandoCliente.getDireccion() + " ");   
              
-        } else {
-            JOptionPane.showMessageDialog(this, "Telefono no encontrado");
+            } else {
+                JOptionPane.showMessageDialog(this, "Telefono no encontrado");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe ingresar un numero de telefono para realizar la busqueda.");
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 

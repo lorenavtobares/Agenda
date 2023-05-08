@@ -221,30 +221,28 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
             if ( !dni.isEmpty() ){
                 dni_parceado = Integer.parseInt(dni);
                 
-                if ( !apellido.isEmpty() ){    
-                if ( !nombre.isEmpty() ){
-                if ( !ciudad.isEmpty() ){
-                if ( !ciudad.isEmpty() ){         
-                if ( !telefono.isEmpty() ){
-                if ( !direccion.isEmpty() ){
+            if ( !apellido.isEmpty() ){    
+            if ( !nombre.isEmpty() ){
+            if ( !ciudad.isEmpty() ){
+            if ( !telefono.isEmpty() ){
+            if ( !direccion.isEmpty() ){
                                     
-                    Cliente miCliente = new Cliente( dni_parceado, nombre, apellido, ciudad, direccion );
-                    boolean resultado = Menu.miDirectorio.agregarCliente(telefono, miCliente);
+                Cliente miCliente = new Cliente( dni_parceado, nombre, apellido, ciudad, direccion );
+                boolean resultado = Menu.miDirectorio.agregarCliente(telefono, miCliente);
         
-                    if ( resultado ) {
-                        JOptionPane.showMessageDialog(this,"Cliente registrado");
-                    } else {
-                        JOptionPane.showMessageDialog(this,"Telefono duplicado");  
-                    }
-                    limpiar();
+                if ( resultado ) {
+                    JOptionPane.showMessageDialog(this,"Cliente registrado");
+                } else {
+                    JOptionPane.showMessageDialog(this,"Telefono duplicado");  
+                }
+                limpiar();
                                     
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar una direccion."); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un telefono."); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un telefono."); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar una ciudad."); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Nombre"); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Apellido"); }
-                } else { JOptionPane.showMessageDialog(this,"Debe ingresar un DNI"); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar una direccion."); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar un telefono."); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar una ciudad."); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Nombre"); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar un Apellido"); }
+            } else { JOptionPane.showMessageDialog(this,"Debe ingresar un DNI"); }
         
         }catch(Exception atrapa){
         

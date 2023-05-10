@@ -4,11 +4,15 @@
 
 package vistas;
 
+
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import negocio.Cliente;
 
 
-public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
+public class VistaBuscarTelefono extends javax.swing.JInternalFrame{
 
     public VistaBuscarTelefono() {
         initComponents();
@@ -40,15 +44,20 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
 
         jtable_clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "DNI", "APELLIDO", "NOMBRE", "CIUDAD", "DIRECCION", "TELEFONO"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jtable_clientes);
 
         btn_cerrar.setText("Cerrar");
@@ -134,24 +143,63 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
-        
         dispose();
     }//GEN-LAST:event_btn_cerrarActionPerformed
 
+    
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         String apellido = jcb_buscarApellido.getText(); //recibe el apellido
         
-        if ( !apellido.isEmpty() ){
-            Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(apellido));
+        if ( !apellido.isEmpty() ){          
+            
+            ArrayList<String> arrayClientes = (Menu.miDirectorio.buscarTelefono(apellido));
+            
+            DefaultTableModel modeloDefault = new DefaultTableModel(new String[]{"DNI", "APELLIDO", "NOMBRE", "CIUDAD", "DIRECCION", "TELEFONO"},Menu.miDirectorio.getRegistros());
+            jtable_clientes.setModel(modeloDefault);
+            
+            TableModel modeloDatos = jtable_clientes.getModel();
+            
+            for ( int i = 0; i < arrayClientes.size() ; i++){
+                /*
+                modeloDatos.setValueAt(arrayClientes.get(i) , i, 0);
+                modeloDatos.setValueAt(arrayClientes.get(i) , i, 1);
+                modeloDatos.setValueAt(arrayClientes.get(i) , i, 2);
+                modeloDatos.setValueAt(arrayClientes.get(i) , i, 3);
+                modeloDatos.setValueAt(arrayClientes.get(i) , i, 4);
+                modeloDatos.setValueAt(arrayClientes , i, 5);
+                */
+                
+            }
+            
+            
+            
+            
+/*
+            String col[] = {"DNI","APELLIDO","NOMBRE", "CIUDAD", "DIRECCION", "TELEFONO"};
+            DefaultTableModel jtable_clientes = new DefaultTableModel(col, 0);
+            JTable table = new JTable(jtable_clientes);
+
+            Object[] objs = {35475532, "Soria", "Cristian", "San Luis", "Calderon", 2664};
+            jtable_clientes.addRow(objs);
+*/
+
+   
         }else{
             JOptionPane.showMessageDialog(this, "Debe ingresar un apellido para realizar la busqueda.");
         }
-        
-        
-        
-        
-    }//GEN-LAST:event_btn_buscarActionPerformed
 
+    }//GEN-LAST:event_btn_buscarActionPerformed
+    
+    public void llenarTabla(){
+        DefaultTableModel modeloDefault = new DefaultTableModel(new String[]{"DNI", "APELLIDO", "NOMBRE", "CIUDAD", "DIRECCION", "TELEFONO"},Menu.miDirectorio.getRegistros());
+        jtable_clientes.setModel(modeloDefault);
+            
+        TableModel modeloDatos = jtable_clientes.getModel();
+            
+        for ( int i = 0; i < Menu.miDirectorio.getRegistros() ; i++){
+            modeloDatos.setValueAt("Arrays" , i, 0);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
@@ -165,4 +213,6 @@ public class VistaBuscarTelefono extends javax.swing.JInternalFrame {
     private javax.swing.JLabel label_subtitulo1;
     private javax.swing.JLabel label_titulo;
     // End of variables declaration//GEN-END:variables
+
+    
 }

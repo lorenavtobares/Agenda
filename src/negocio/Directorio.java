@@ -12,8 +12,12 @@ import java.util.Set;
 public class Directorio {
     private HashMap <String,Cliente> registro = new HashMap <String,Cliente>();
     
+    public int getRegistros (){
+        return registro.size();
+    }
+    
     public Cliente buscarCliente ( String numTelefono ){
-        for ( Map.Entry<String, Cliente> entry : registro.entrySet() ) {
+        for ( Map.Entry <String, Cliente> entry : registro.entrySet() ) {
             String key = entry.getKey();
             Cliente value = entry.getValue();
             if(numTelefono.equals(key)){
@@ -24,18 +28,17 @@ public class Directorio {
         return null;
     }
     
-    public ArrayList<Cliente> buscarClientes( String ciudad ){
-        
-        ArrayList<Cliente> buscar = new ArrayList();
-        Set<String> claves = registro.keySet();
-        Iterator<String> it = claves.iterator();
+    public ArrayList <Cliente> buscarClientes( String ciudad ){    
+        ArrayList <Cliente> buscar = new ArrayList();
+        Set <String> claves = registro.keySet();
+        Iterator <String> it = claves.iterator();
         
         while(it.hasNext()){
             String claveActual = it.next();
-            Cliente clienteActual = registro.get(claveActual);
+            Cliente clienteActual = registro.get( claveActual );
            
-            if( clienteActual.getCiudad().equals(ciudad) ) {
-                buscar.add(clienteActual);
+            if( clienteActual.getCiudad().equals( ciudad ) ) {
+                buscar.add( clienteActual );
             }         
         }
         return buscar;
@@ -50,28 +53,46 @@ teléfono. Siendo el nro del teléfono la clave del mismo.
     public boolean agregarCliente( String telefono, Cliente cliente ){
         boolean agregado = false;
 
-        if ( !registro.containsKey(telefono) ){
+        if ( !registro.containsKey( telefono ) ){
             registro.put( telefono, cliente );
             agregado = true;
         }
         return agregado;
-    }   
+    }
     
-    public ArrayList<String> buscarTelefono( String apellido ){
-        ArrayList <String> num = new ArrayList<String>();
-        for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
-            if(registro.containsValue(apellido))
-            {
-                num.add(entry.getKey());
-            }
+    //
+    
+    public ArrayList <Cliente> buscarApellido( String apellido ){
+        ArrayList <Cliente> buscar = new ArrayList();
+        Set <String> claves = registro.keySet();
+        Iterator <String> it = claves.iterator();
+        
+        while ( it.hasNext() ) {
+            String claveActual = it.next();
+            Cliente clienteActual = registro.get( claveActual );
+           
+            if( clienteActual.getCiudad().equals( apellido ) ) {
+                buscar.add( clienteActual );
+            }         
         }
         
-        /*Iterator <String> i= num.iterator();
-        while(i.hasNext()){
-            System.out.println(i.next());
-        }*/
-        return num;
+        return buscar;
     }
+    
+    //https://github.com/DiscoDurodeRoer/ejercicios-java-youtube/blob/master/estructuras%20dinamicas/estructuras%20dinamicas%2007/Ejercicio_ED_7_Discoduroderoer/src/ejercicio_ed_7_discoduroderoer/Ejercicio_ED_7_Discoduroderoer.java
+    
+    public ArrayList <String> buscarTelefono ( String apellido ){
+        ArrayList <String> arrayNum = new ArrayList <>();
+                
+        for ( Map.Entry <String, Cliente> entry : registro.entrySet() ){
+            if( registro.containsValue(apellido)){
+                arrayNum.add(entry.getKey());
+            }
+        }
+         
+        return arrayNum;
+    }
+    
     
     public void borrarCliente(String telefono){
         Cliente aux = registro.remove( telefono );

@@ -244,7 +244,7 @@ public class VistaBorrarCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tf_direccionActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        String telefono = tf_busqueda.getText(); //recibe el telefono
+        String telefono = tf_busqueda.getText();
         
         if ( !telefono.isEmpty() ){
             Cliente buscandoCliente = (Menu.miDirectorio.buscarCliente(telefono));

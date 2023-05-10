@@ -11,12 +11,10 @@
             <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/VistaBorrarCliente.java</file>
         </group>
         <group name="Facultad">
-            <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBuscarClientes.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBuscarCliente.java</file>
-            <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBorrarCliente.java</file>
+            <file>file:/C:/Laboratorio1/TP_06/src/negocio/Directorio.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBuscarTelefono.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/Menu.java</file>
-            <file>file:/C:/Laboratorio1/TP_06/src/tp6/Tp6.java</file>
         </group>
     </open-files>
 </project-private>

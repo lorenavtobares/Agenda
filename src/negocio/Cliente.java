@@ -8,14 +8,22 @@ public class Cliente {
     private String apellido;
     private String ciudad;
     private String direccion;
+    private String telefono; 
+    public boolean getApellido;
 
-    public Cliente(int dni, String nombre, String apellido, String ciudad, String direccion) {
+    public Cliente() { 
+    }
+
+    public Cliente(int dni, String nombre, String apellido, String ciudad, String direccion, String telefono) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.ciudad = ciudad;
         this.direccion = direccion;
+        this.telefono = telefono;
     }
+    
+    
 
     public int getDni() {
         return dni;
@@ -56,6 +64,24 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+   
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni: " + dni + ", nombre: " + nombre + ", apellido: " + apellido + ", ciudad: " + ciudad + ", direccion: " + direccion + ", telefono: " + telefono + '}';
+    }
+    
+    
+    
     
     
 }

@@ -5,13 +5,14 @@
 package tp6;
 
 import negocio.Directorio;
+import vistas.Menu;
 //import vistas.Menu;
 
 public class Tp6 {
 
     public static void main(String[] args) {
-        //Menu windor = new Menu();
-        //windor.setVisible(true);
+        Menu windor = new Menu();
+        windor.setVisible(true);
         
         Directorio directorio = new Directorio();      
        

@@ -42,7 +42,6 @@ public class Menu extends javax.swing.JFrame {
         mb_menu_buscarClientes = new javax.swing.JMenuItem();
         mb_salir = new javax.swing.JMenu();
         mb_salir_salirSistema = new javax.swing.JMenuItem();
-        mb_ayuda = new javax.swing.JMenu();
 
         PopMenu_agregarCliente.setText("Agregar Cliente");
         PopMenu_agregarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -176,20 +175,23 @@ public class Menu extends javax.swing.JFrame {
 
         mb.add(mb_salir);
 
-        mb_ayuda.setText("Ayuda");
-        mb.add(mb_ayuda);
-
         setJMenuBar(mb);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -330,7 +332,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem PopMenu_buscarTelefono;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar mb;
-    private javax.swing.JMenu mb_ayuda;
     private javax.swing.JMenu mb_menu;
     private javax.swing.JMenuItem mb_menu_agregarCliente;
     private javax.swing.JMenuItem mb_menu_borrarCliente;

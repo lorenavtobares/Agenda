@@ -2,19 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/VistaBuscarClientes.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/ViewAgregarCliente.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/Menu.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/VistaBuscarCliente.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/tp6/Tp6.java</file>
-            <file>file:/C:/Users/Lenovo/Desktop/marcos/programar/Tp6/src/vistas/VistaBorrarCliente.java</file>
-        </group>
         <group name="Facultad">
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBuscarCliente.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/negocio/Directorio.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/VistaBuscarTelefono.java</file>
             <file>file:/C:/Laboratorio1/TP_06/src/vistas/Menu.java</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/Menu.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/negocio/Directorio.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/VistaBuscarTelefono.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/VistaBuscarClientes.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/negocio/Cliente.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/clientesBorrar.png</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/ViewAgregarCliente.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/tp6/Tp6.java</file>
+            <file>file:/C:/Users/loren/OneDrive/Escritorio/DDS/1.%20Laboratorio%20I/TP/6/TP06_AgendaJava/src/vistas/clientePapelera.png</file>
         </group>
     </open-files>
 </project-private>

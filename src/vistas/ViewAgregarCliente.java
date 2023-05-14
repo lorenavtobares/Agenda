@@ -36,7 +36,6 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
         tf_direccion = new javax.swing.JTextField();
         label_icono = new javax.swing.JLabel();
         label_subtitulo = new javax.swing.JLabel();
-        btn_nuevo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(176, 218, 255));
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -103,13 +102,6 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
         label_subtitulo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label_subtitulo.setText("Datos del cliente");
 
-        btn_nuevo.setText("Nuevo");
-        btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,11 +127,9 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
                                     .addComponent(label_apellido)
                                     .addComponent(label_dni)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(170, 170, 170)
+                                        .addGap(391, 391, 391)
                                         .addComponent(btn_guardar)
-                                        .addGap(109, 109, 109)
-                                        .addComponent(btn_nuevo)
-                                        .addGap(119, 119, 119)
+                                        .addGap(72, 72, 72)
                                         .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(label_telefono)
@@ -151,7 +141,7 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
                                             .addComponent(tf_nombre)
                                             .addComponent(tf_apellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(tf_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 60, Short.MAX_VALUE)))
+                        .addGap(0, 74, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
@@ -196,9 +186,8 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_guardar)
-                    .addComponent(btn_cerrar)
-                    .addComponent(btn_nuevo))
-                .addContainerGap(153, Short.MAX_VALUE))
+                    .addComponent(btn_cerrar))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         label_icono.getAccessibleContext().setAccessibleName("iconoAdd");
@@ -227,7 +216,7 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
             if ( !telefono.isEmpty() ){
             if ( !direccion.isEmpty() ){
                                     
-                Cliente miCliente = new Cliente( dni_parceado, nombre, apellido, ciudad, direccion );
+                Cliente miCliente = new Cliente( dni_parceado, nombre, apellido, ciudad, direccion,telefono );
                 boolean resultado = Menu.miDirectorio.agregarCliente(telefono, miCliente);
         
                 if ( resultado ) {
@@ -266,10 +255,6 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_dniActionPerformed
 
-    private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
-        limpiar();
-    }//GEN-LAST:event_btn_nuevoActionPerformed
-
     public void limpiar(){
     
         tf_dni.setText("");
@@ -284,7 +269,6 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cerrar;
     private javax.swing.JButton btn_guardar;
-    private javax.swing.JButton btn_nuevo;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_apellido;
